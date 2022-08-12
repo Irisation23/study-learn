@@ -80,3 +80,4 @@ public synchronized StringBuffer append(String str) {
 - 동시 접근이 가능하지 않은 환경에서는 StringBuilder 을 사용하는 것이 좋다.
   - 왜?
   - `StringBuffer` 사용 시 lock 을 잡아 비용이 들기 때문이다.
+
