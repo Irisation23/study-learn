@@ -98,5 +98,5 @@ Cookie: JSESSIONID=bar
 
 ***
 [로컬 스토리지와 세션 스토리지](https://racoonlotty.tistory.com/entry/%EC%BF%A0%ED%82%A4%EC%99%80-%EC%84%B8%EC%85%98-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%A1%9C%EC%BB%AC-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80%EC%99%80-%EC%84%B8%EC%85%98-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80)
-- TODO 
--[쿠키와 세션 관계] https://thecodinglog.github.io/web/2020/08/11/what-is-session.html
+
+[쿠키와 세션 관계](https://thecodinglog.github.io/web/2020/08/11/what-is-session.html)
