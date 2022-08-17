@@ -1,29 +1,20 @@
 # 🍪쿠키(cookie)와 🥠세션(session)
 
-- 시작에 앞서 쿠키와 세션은 뗄래야 뗄수 없는 사이 이 참에 정리해서 혼내주자 !
-
 ## HTTP 프로토콜의 특징
-> HTTP 는 메시지의 구조 및 클라이언트와 서버가 메시지를 어떻게 교환하는지 정의합니다.
-
-> 프로토콜은 둘 이상의 통신 개체 간에 교환되는 메시지 포맷과 순서뿐 아니라,
-> 메시지의 송수신과 다른 이벤트에 따른 행동들을 정의합니다.
-> 인터넷과 일반 컴퓨터 네트워크는 많은 프로토콜을 이용합니다.
 
 ### 비연결 지향(Connectionless)
 - 클라이언트가 request 를 서버에 보내고,
-- 서버가 클라이언트에 요청에 맞는 response 에는 (web page 가 있을 수 있음.)  를 보내면
+- 서버가 클라이언트에 요청에 맞는 response 를 보내면
 - 즉시 연결을 끊음.
+- Why??
+  - TODO
 
 ### 상태정보 유지 안 함(Stateless)
 - 연결을 끊는 순간 클리이언트와 서버의 통신은 끝남.
 - 상태 정보를 유지하지 않음.
 - Why??
-  - 데이터를 매우 빠르고 확실하게 처리하는 범위성(scalability) 을 확보하기 위해서
-  - 이와 같이 설계 되었음.
-  - 범위성??
-  - 범위성은 컴퓨터 애플리케이션이나 제품 (하드웨어나 소프트웨어)이, 
-  - 사용자의 요구에 맞추기 위해 크기나 용량을 변경해도, 그 기능이 계속하여 잘 동작할 수 있는 능력을 말한다.
-  - [범위성 참고자료](http://www.terms.co.kr/scalability.htm)
+  - TODO
+
 
 ### 쿠키와 세션의 필요성
 - HTTP 프로토콜은 위와 같은 특징으로 모든 요청 간 의존관계가 없음.
@@ -52,11 +43,10 @@
 7. `HttpOnly` 여부(HttpOnly)
 
 ### 동작 방식
-![image](https://user-images.githubusercontent.com/53285909/185201515-a26bb567-42e9-4fe6-b7e2-a52e8026069b.png)
 ![image](https://user-images.githubusercontent.com/53285909/184312770-f85ed402-851d-4498-beb2-e4493dc9484d.png)
-1. 웹브라우저(클라이언트) 가 서버에 요청
+1. 웹브라우저가 서버에 요청
 2. 상태를 유지하고 싶은 값을 쿠키(Cookie) 로 생성
-3. 서버가 응답할 때 `HTTP 헤더(Set-Cookie)` 에 쿠키를 포함해서 전송
+3. 서버가 응답할 때 HTTP 헤더(Set-Cookie) 에 쿠키를 포함해서 전송
 ```
 Set-Cokie: id=foo
 ```
@@ -66,12 +56,6 @@ Cookie: id=foo
 ```
 5. 서버에서는 쿠키 정보를 읽어 이전 상태 정보를 확인한 후 응답
 
-### 쿠키를 로그인에 적용해 본다면??
-- 로그인에 성공하면 특정 이름을 갖는 쿠키를 생성한다.
-- 해당 쿠키가 존재하면 로그인한 상태라고 판단한다.
-- 로그아웃하면 해당 쿠키를 삭제한다.
-- 로그인에 성공하면 "AUTH" 라는 쿠키를 생성하고, "AUTH" 쿠키가 존재하면 로그인한 상태라고 인식한다.
-
 ## 세션??
 
 ### 개념
@@ -79,29 +63,26 @@ Cookie: id=foo
 - 즉, 웹 브라우저를 통해 서버에 접속한 이후부터 브라우저를 종료할 때까지 유지되는 상태이다.
 
 ### 동작방식
-![image](https://user-images.githubusercontent.com/53285909/185201222-c903e785-3e39-425b-9ec1-62595e12841c.png)
 ![image](https://user-images.githubusercontent.com/53285909/184313861-4ba55573-a6c7-4590-b925-9ed90dbbba06.png)
-1. 웹브라우저(클라이언트)가 서버에 요청
+1. 웹브라우저가 서버에 요청
 2. 서버가 해당 웹브라우저(클라이언트)에 유일한 ID(Session ID)를 부여함.
-3. 서버가 응답할 때 `HTTP 헤더(Set-Cookie)` 에 Session ID 를 포함해서 전송
+3. 서버가 응답할 때 HTTP 헤더(Set-Cookie)에 Session ID 를 포함해서 전송
 ```
 Set-Cookie: JSESSIONID=bar
 ```
-4. 웹브라우저는 이후 웹브라우저를 닫기까지 다음 요청 때마다 부여된 Session ID 가 담겨있는 쿠키를 HTTP 헤더에 넣어서 전송
+4. 웹브라우저는 이후 웹브라우저를 닫기까지 다음 요청 때 부여된 Session ID 가 담겨있는 쿠키를 HTTP 헤더에 넣어서 전송
 ```
 Cookie: JSESSIONID=bar
 ```
 5. 서버는 세션 ID 를 확인하고, 해당 세션에 관련된 정보를 확인한 후 응답.
-> 세션도 쿠키를 사용하여 값을 주고 받으며 클라이언트의 상태 정보를 유지한다.   
+> 세션도 쿠키를 사용하여 값을 주고 받으며 클라이언트의 상태 정보를 유지한다.
 > 즉, 상태 정보를 유지하는 수단은 `쿠키` 이다.
 
-# 정리
-- 세션은 Java 로 표현시 Map<String, Object> session
-- String 타입 키로 구분하는 Object.DB 로 표현하면 Header, Detail 두개 테이블로 이루어진 저장공간이라 할 수있음.
+## 정리
 
 ### 저장 위치
 - 쿠키: 클라이언트
-- 세션: 서버 메모리에 저장하거나, 서버와 연결된 DB 에 저장된다.
+- 세션: 서버
 
 ### 보안
 - 쿠키: 클라이언트에 저장되므로 보안에 취약.
@@ -116,10 +97,6 @@ Cookie: JSESSIONID=bar
 - 세션: 실제 저장된 정보가 서버에 있으므로 서버의 처리가 필요해 쿠키보다 느리다.
 
 ***
-
-![image](https://user-images.githubusercontent.com/53285909/185201222-c903e785-3e39-425b-9ec1-62595e12841c.png)
-
-
 [로컬 스토리지와 세션 스토리지](https://racoonlotty.tistory.com/entry/%EC%BF%A0%ED%82%A4%EC%99%80-%EC%84%B8%EC%85%98-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%A1%9C%EC%BB%AC-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80%EC%99%80-%EC%84%B8%EC%85%98-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80)
 
 [쿠키와 세션 관계](https://thecodinglog.github.io/web/2020/08/11/what-is-session.html)
