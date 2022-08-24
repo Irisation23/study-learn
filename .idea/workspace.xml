@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d57ba3de-2de6-443c-be88-7c6ef43c0f7b" name="Changes" comment="" />
+    <list default="true" id="d57ba3de-2de6-443c-be88-7c6ef43c0f7b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/RabbitMQ/RabbitMQ.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +36,11 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -45,6 +53,8 @@
       <workItem from="1660021748782" duration="5343000" />
       <workItem from="1660290859465" duration="3212000" />
       <workItem from="1660752698730" duration="4806000" />
+      <workItem from="1660788082601" duration="1354000" />
+      <workItem from="1661303831202" duration="4457000" />
     </task>
     <servers />
   </component>
