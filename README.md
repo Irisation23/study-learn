@@ -12,5 +12,5 @@
 - [자바의 정석](https://github.com/bunsung92/study-learn/tree/develop/Books/Java/Standard)
 
 ## 주제별 공부
-- StringBuffer-vs-StringBuilder
+- [StringBuffer-vs-StringBuilder](https://github.com/bunsung92/study-learn/tree/develop/StringBuffer-vs-StringBuilder)
 - Cookie-vs-Session
